@@ -5,4 +5,4 @@ build:
     build:
       - build install
 run:
-  command: bundle install; ls -lf / ; bundle exec rails s -p 8000
+  command: bundle install; bundle exec rails s -p 8000
