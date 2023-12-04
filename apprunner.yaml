@@ -1,0 +1,8 @@
+version: 1.0
+runtime: ruby31
+build:
+  commands:
+    build:
+      - build install
+run:
+  command: bundle install; ls -lf / ; bundle exec rails s -p 8000
