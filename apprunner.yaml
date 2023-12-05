@@ -3,6 +3,7 @@ runtime: ruby31
 build:
   commands:
     build:
+      - apk search postgresql
       - yum -y update
       - yum repolist enabled
       - yum list postgresql*
