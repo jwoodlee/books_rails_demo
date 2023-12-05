@@ -3,7 +3,6 @@ runtime: ruby31
 build:
   commands:
     build:
-      - extra_install.sh
-      - bundle install
+      - ./extra_install.sh ; bundle install
 run:
   command: bundle install; bundle exec rails s -p 8000
