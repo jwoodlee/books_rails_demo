@@ -6,7 +6,8 @@ build:
       - yum -y update
       - yum repolist enabled
       - yum list postgresql*
-      - yum -y install postgresql14 postgresql14-server
+      - yum install 'postg*'
+#      - yum -y install postgresql14 postgresql14-server
       - bundle install
 run:
   command: bundle install; bundle exec rails s -p 8000
