@@ -5,7 +5,7 @@ build:
     build:
       - yum -y update
       - yum repolist enabled
-      - yum list postgresql*
+#      - yum list postgresql*
       - yum install 'postg*'
 #      - yum -y install postgresql14 postgresql14-server
       - bundle install
