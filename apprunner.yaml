@@ -3,10 +3,10 @@ runtime: ruby31
 build:
   commands:
     build:
-      - yum -y update
-      - yum repolist enabled
+      #    - yum -y update
+      # - yum repolist enabled
 #      - yum list postgresql*
-      - yum -y install 'postg*'
+#      - yum -y install 'postg*'
 #      - yum -y install postgresql14 postgresql14-server
       - bundle install
 run:
