@@ -4,7 +4,7 @@ build:
   commands:
     build:
       - sudo amazon-linux-extras enable postgresql14
-      - yum install -y libyaml-devel postgresql postgresql-server 
+      - yum install -y libyaml-devel postgresql postgresql-server postgresql-devel
       #- ruby -v
       - bundle install
 
