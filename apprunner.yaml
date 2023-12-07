@@ -8,6 +8,9 @@ build:
 #      - yum list postgresql*
 #      - yum -y install 'postg*'
 #      - yum -y install postgresql14 postgresql14-server
+      - sudo amazon-linux-extras enable postgresql14
+      - yum -y update
+      - yum install libyaml-devel postgresql-server postgresql-devel -y
       - bundle install
 run:
   command: bundle install; bundle exec rails s -p 8000
