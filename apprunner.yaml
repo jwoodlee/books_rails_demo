@@ -9,14 +9,15 @@ build:
       - export BUILD_HOME=`pwd`
       - env
       - cd /usr/local/rbenv/plugins/ruby-build 
+      - pwd 
       - ls -l
       - git pull
-      - cd $BUILD_HOME
-      - export RUBY_32_VERSION="3.2.1"
-      - rbenv install --list
-      - rbenv install $RUBY_32_VERSION
-      - rm -rf /tmp/*
-      - rbenv global $RUBY_32_VERSION && ruby -v
-      - bundle install
+        #   - cd $BUILD_HOME
+        #   - export RUBY_32_VERSION="3.2.1"
+        #- rbenv install --list
+        #- rbenv install $RUBY_32_VERSION
+        #   - rm -rf /tmp/*
+        #  - rbenv global $RUBY_32_VERSION && ruby -v
+        #  - bundle install
 run:
   command: bundle exec rails s -p 8000
