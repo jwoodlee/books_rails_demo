@@ -7,11 +7,12 @@ build:
       #- yum install -y postgresql postgresql-server 
       #- ruby -v
       
+      - env
       - cd $RUBY_BUILD_SRC_DIR
       - pwd
+      - ls -l
       - git pull
       - export RUBY_32_VERSION="3.2.1"
-      - env
       - rbenv install --list
       - rbenv install $RUBY_32_VERSION
       - rm -rf /tmp/*
