@@ -8,7 +8,8 @@ build:
       #- ruby -v
       
       - cd ~/. rbenv/plugins/ruby-build
-      - git pull
+      - pwd
+      - yum update ruby-build
       - export RUBY_32_VERSION="3.2.1"
       - env
       - rbenv install --list
