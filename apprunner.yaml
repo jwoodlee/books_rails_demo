@@ -8,7 +8,7 @@ build:
       #- ruby -v
       
       - env
-      - cd $RUBY_BUILD_SRC_DIR
+      - cd /usr/local/rbenv/plugins/ruby-build
       - pwd
       - ls -l
       - git pull
