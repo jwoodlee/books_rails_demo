@@ -3,14 +3,12 @@ runtime: ruby31
 build:
   commands:
     build:
-      #    - yum -y update
-      # - yum repolist enabled
-#      - yum list postgresql*
-#      - yum -y install 'postg*'
-#      - yum -y install postgresql14 postgresql14-server
       - sudo amazon-linux-extras enable postgresql14
-      - yum -y update
-      - yum install libyaml-devel postgresql-server postgresql-devel -y
+      - yum install -y postgresql postgresql-server 
+      - ruby -v
+      - cd $CODEBUILD_SRC_DIR//
+      - export RUBY_32_VERSION="3.2.1"
+      - rbenv install $RUBY_32_VERSION && rm -rf /tmp/* && rbenv global $RUBY_32_VERSION && ruby -v
       - bundle install
 run:
-  command: bundle install; bundle exec rails s -p 8000
+  command: bundle exec rails s -p 8000
