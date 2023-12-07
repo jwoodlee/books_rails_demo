@@ -5,11 +5,13 @@ build:
     build:
       #      - sudo amazon-linux-extras enable postgresql14
       #- yum install -y postgresql postgresql-server 
-      - ruby -v
-      - cd $CODEBUILD_SRC_DIR//
+      #- ruby -v
       - export RUBY_32_VERSION="3.2.1"
       - env
-      - rbenv install $RUBY_32_VERSION && rm -rf /tmp/* && rbenv global $RUBY_32_VERSION && ruby -v
+      - rbenv install --list
+      - rbenv install $RUBY_32_VERSION
+      - rm -rf /tmp/*
+      - rbenv global $RUBY_32_VERSION && ruby -v
       - bundle install
 run:
   command: bundle exec rails s -p 8000
