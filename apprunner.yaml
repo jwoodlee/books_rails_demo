@@ -6,12 +6,12 @@ build:
       #      - sudo amazon-linux-extras enable postgresql14
       #- yum install -y postgresql postgresql-server 
       #- ruby -v
-      
+      - export BUILD_HOME=`pwd`
       - env
       - cd /usr/local/rbenv/plugins/ruby-build
-      - pwd
       - ls -l
       - git pull
+      - cd $BUILD_HOME
       - export RUBY_32_VERSION="3.2.1"
       - rbenv install --list
       - rbenv install $RUBY_32_VERSION
