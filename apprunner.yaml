@@ -23,4 +23,4 @@ build:
         #  - rbenv global $RUBY_32_VERSION && ruby -v
         #  - bundle install
 run:
-  command: bundle exec rails s -p 8000
+  command: bundle exec rackup --host 0.0.0.0 -p 8080
