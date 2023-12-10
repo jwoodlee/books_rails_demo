@@ -5,22 +5,24 @@ build:
     build:
       - sudo amazon-linux-extras enable postgresql14
       - yum install -y libyaml-devel postgresql postgresql-server postgresql-devel
-      #- ruby -v
       - bundle install
-
-
-      #- export BUILD_HOME=`pwd`
-      # - env
-      #- cd /usr/local/rbenv/plugins/ruby-build 
-      #- pwd 
-      #- ls -l
-      #- git pull
-        #   - cd $BUILD_HOME
-        #   - export RUBY_32_VERSION="3.2.1"
-        #- rbenv install --list
-        #- rbenv install $RUBY_32_VERSION
-        #   - rm -rf /tmp/*
-        #  - rbenv global $RUBY_32_VERSION && ruby -v
-        #  - bundle install
+   env:
+    - name: DEMO_DATABASE_CONN
+      value: "something"
+    - name: DEMO_DATABASE_USER
+      value: "demo"
+    - name: DEMO_DATABASE_PASSWORD
+      value: "password"
 run:
-  command: bundle install ; bundle exec rails -s -p 8080
+  runtime-version: 3.1.4
+  command: bundle exec rackup --host 0.0.0.0 -p 8080
+  network:
+    port: 8080
+    env: APP_PORT
+ env:
+   - name: DEMO_DATABASE_CONN
+     value: "something"
+   - name: DEMO_DATABASE_USER
+     value: "demo"
+   - name: DEMO_DATABASE_PASSWORD
+     value: "password"

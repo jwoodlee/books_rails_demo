@@ -238,6 +238,7 @@ GEM
 PLATFORMS
   aarch64-linux
   arm64-darwin-21
+  arm64-darwin-22
 
 DEPENDENCIES
   bootsnap
@@ -257,7 +258,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.1.4p223
 
 BUNDLED WITH
    2.3.26
