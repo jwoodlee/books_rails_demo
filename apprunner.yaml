@@ -2,18 +2,16 @@ version: 1.0
 runtime: ruby31
 build:
   commands:
-    build:
-      env:
-        - name: DEMO_DATABASE_CONN
-          value: "something"
-        - name: DEMO_DATABASE_USER
-          value: "demo"
-        - name: DEMO_DATABASE_PASSWORD
-          value: "password"
-      - sudo amazon-linux-extras enable postgresql14
-      - yum install -y libyaml-devel postgresql postgresql-server postgresql-devel
-      - bundle install
-
+    - sudo amazon-linux-extras enable postgresql14
+    - yum install -y libyaml-devel postgresql postgresql-server postgresql-devel
+    - bundle install
+   env:
+     - name: DEMO_DATABASE_CONN
+       value: "something"
+     - name: DEMO_DATABASE_USER
+       value: "demo"
+     - name: DEMO_DATABASE_PASSWORD
+       value: "password"
 run:
   runtime-version: 3.1.4
   command: bundle exec rackup --host 0.0.0.0 -p 8080
