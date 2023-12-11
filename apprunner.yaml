@@ -1,13 +1,13 @@
 version: 1.0
 runtime: ruby31
 build:
-   env:
-     - name: DEMO_DATABASE_CONN
-       value: "something"
-     - name: DEMO_DATABASE_USER
-       value: "demo"
-     - name: DEMO_DATABASE_PASSWORD
-       value: "password"
+  env:
+    - name: DEMO_DATABASE_CONN
+      value: "something"
+    - name: DEMO_DATABASE_USER
+      value: "demo"
+    - name: DEMO_DATABASE_PASSWORD
+      value: "password"
   commands:
     build:
       - sudo amazon-linux-extras enable postgresql14
