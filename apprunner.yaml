@@ -13,6 +13,7 @@ build:
       - sudo amazon-linux-extras enable postgresql14
       - yum install -y libyaml-devel postgresql postgresql-server postgresql-devel
       - bundle install
+      - RAILS_ENV=production bundle exec rails db:create db:migrate
 run:
   runtime-version: 3.1.4
   env:
