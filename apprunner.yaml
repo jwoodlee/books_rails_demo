@@ -8,6 +8,8 @@ build:
       value: "demo"
     - name: DEMO_DATABASE_PASSWORD
       value: "password"
+    - name: SECRET_KEY_BASE
+      value: "secret"
   commands:
     build:
       - sudo amazon-linux-extras enable postgresql14
@@ -23,6 +25,8 @@ run:
       value: "demo"
     - name: DEMO_DATABASE_PASSWORD
       value: "demoRails1"
+    - name: SECRET_KEY_BASE
+      value: "secret"
   command: bundle exec rails s -p 8080
   network:
     port: 8080
