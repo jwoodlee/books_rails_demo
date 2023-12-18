@@ -2,17 +2,16 @@ version: 1.0
 runtime: ruby31
 build:
   env:
-   env:
-     - name: DEMO_DATABASE_CONN
-       value: "book-demo.cluster-coehuv4zwaxh.us-east-1.rds.amazonaws.com"
-     - name: DEMO_DATABASE_USER
-       value: "demo"
-     - name: DEMO_DATABASE_PASSWORD
-       value: "demoRails1"
-     - name: SECRET_KEY_BASE
-       value: "secret"
-     - name: RAILS_ENV
-       value: "production"
+    - name: DEMO_DATABASE_CONN
+      value: "book-demo.cluster-coehuv4zwaxh.us-east-1.rds.amazonaws.com"
+    - name: DEMO_DATABASE_USER
+      value: "demo"
+    - name: DEMO_DATABASE_PASSWORD
+      value: "demoRails1"
+    - name: SECRET_KEY_BASE
+      value: "secret"
+    - name: RAILS_ENV
+      value: "production"
   commands:
     build:
       - sudo amazon-linux-extras enable postgresql14
