@@ -17,7 +17,6 @@ build:
       - sudo amazon-linux-extras enable postgresql14
       - yum install -y libyaml-devel postgresql postgresql-server postgresql-devel
       - bundle install
-      - bundle exec rails db:create db:migrate
 run:
   runtime-version: 3.1.4
   env:
@@ -29,7 +28,7 @@ run:
       value: "demoRails1"
     - name: SECRET_KEY_BASE
       value: "secret"
-  command: bundle exec rails s -b 0.0.0.0 -p 8080
+  command: bundle exec rails db:create db:migrate && bundle exec rails s -b 0.0.0.0 -p 8080
   network:
     port: 8080
     env: APP_PORT
