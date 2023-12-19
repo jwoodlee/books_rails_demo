@@ -1,0 +1,71 @@
+version: 0.2
+
+#env:
+  #variables:
+     # key: "value"
+     # key: "value"
+  #parameter-store:
+     # key: "value"
+     # key: "value"
+  #secrets-manager:
+     # key: secret-id:json-key:version-stage:version-id
+     # key: secret-id:json-key:version-stage:version-id
+  #exported-variables:
+     # - variable
+     # - variable
+  #git-credential-helper: yes
+#batch:
+  #fast-fail: true
+  #build-list:
+  #build-matrix:
+  #build-graph:
+phases:
+  #install:
+    #runtime-versions:
+      # name: version
+      # name: version
+    #commands:
+      # - command
+      # - command
+  #pre_build:
+    #commands:
+      # - command
+      # - command
+  build:
+    commands:
+
+#      - set -o pipefail; (yum -y update) 2>&1 | sed 's/.*/[Build] &/'
+#      - set -o pipefail; (yum repolist enabled) 2>&1 | sed 's/.*/[Build] &/'
+#      - set -o pipefail; (yum -y install 'postg*') 2>&1 | sed 's/.*/[Build] &/'
+      - yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm --skip-broken
+  #    - yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-42.0-32.noarch.rpm --skip-broken  
+      - yum -y update 
+      - yum install -y postgresql15-server
+      - ruby -v
+      - cd $CODEBUILD_SRC_DIR//
+      - export RUBY_32_VERSION="3.2.1"
+      - rbenv install $RUBY_32_VERSION && rm -rf /tmp/* && rbenv global $RUBY_32_VERSION && ruby -v
+#   
+      - set -o pipefail; (bundle install) 2>&1 | sed 's/.*/[Build] &/'
+  #post_build:
+    #commands:
+      # - command
+      # - command
+#reports:
+  #report-name-or-arn:
+    #files:
+      # - location
+      # - location
+    #base-directory: location
+    #discard-paths: yes
+    #file-format: JunitXml | CucumberJson
+#artifacts:
+  #files:
+    # - location
+    # - location
+  #name: $(date +%Y-%m-%d)
+  #discard-paths: yes
+  #base-directory: location
+#cache:
+  #paths:
+    # - paths
