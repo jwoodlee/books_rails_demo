@@ -4,8 +4,8 @@ build:
   env:
     - name: DATABASE_URL
       value: "postgresql://book-demo.cluster-coehuv4zwaxh.us-east-1.rds.amazonaws.com"
-    - name: DEMO_DATABASE_CONN
-      value: "book-demo.cluster-coehuv4zwaxh.us-east-1.rds.amazonaws.com"
+    - name: DEMO_DATABASE
+      value: "book-demo"
     - name: DEMO_DATABASE_USER
       value: "demo"
     - name: DEMO_DATABASE_PASSWORD
@@ -24,8 +24,8 @@ run:
   env:
     - name: DATABASE_URL
       value: "postgresql://book-demo.cluster-coehuv4zwaxh.us-east-1.rds.amazonaws.com"
-    - name: DEMO_DATABASE_CONN
-      value: "book-demo.cluster-coehuv4zwaxh.us-east-1.rds.amazonaws.com"
+    - name: DEMO_DATABASE
+      value: "book-demo"
     - name: DEMO_DATABASE_USER
       value: "demo"
     - name: DEMO_DATABASE_PASSWORD
