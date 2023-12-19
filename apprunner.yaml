@@ -2,6 +2,8 @@ version: 1.0
 runtime: ruby31
 build:
   env:
+    - name: DATABASE_URL
+      value: "postgresql://book-demo.cluster-coehuv4zwaxh.us-east-1.rds.amazonaws.com"
     - name: DEMO_DATABASE_CONN
       value: "book-demo.cluster-coehuv4zwaxh.us-east-1.rds.amazonaws.com"
     - name: DEMO_DATABASE_USER
@@ -20,6 +22,8 @@ build:
 run:
   runtime-version: 3.1.4
   env:
+    - name: DATABASE_URL
+      value: "postgresql://book-demo.cluster-coehuv4zwaxh.us-east-1.rds.amazonaws.com"
     - name: DEMO_DATABASE_CONN
       value: "book-demo.cluster-coehuv4zwaxh.us-east-1.rds.amazonaws.com"
     - name: DEMO_DATABASE_USER
