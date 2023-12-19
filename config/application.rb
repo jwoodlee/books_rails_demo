@@ -23,6 +23,7 @@ module Demo
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.hosts << /.*\apprunner\.com/
     config.hosts << "kvhqxpteak.us-east-1.awsapprunner.com"
     config.hosts << ".awsapprunner.com"
     config.hosts << "127.0.0.1"
